@@ -128,7 +128,7 @@ p {
 .header-nav-link.current::after {
   content: "";
   position: absolute;
-  bottom: -2.5px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 4px;
@@ -326,8 +326,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* padding: 27px 107px; */
 }
 .images-item {
   flex-basis: calc((100% - 60px) / 3);
@@ -476,6 +474,9 @@ h2 {
   height: 404px;
   align-items: center;
   justify-items: center;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -527,6 +528,7 @@ h2 {
   background-color: rgba(33, 150, 243, 0.9);
   display: flex;
   align-items: center;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -666,9 +668,7 @@ h2 {
 .footer-form-field:focus {
   border: 1px solid #2196f3;
 }
-.footer-form-wrapper {
-  display: flex;
-}
+
 .footer-form-block {
   margin-left: 93px;
 }
@@ -681,10 +681,10 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  transition-property: -webkit-transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -693,6 +693,7 @@ h2 {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  -webkit-transform: scale(1.3);
 }
 
 .modal {
@@ -782,7 +783,6 @@ h2 {
   width: 448px;
   height: 120px;
 }
-
 .modal-form-field:focus {
   border: 1px solid #2196f3;
 }
@@ -791,7 +791,7 @@ h2 {
 }
 .modal-icon-style {
   position: absolute;
-  top: 50%;
+  top: 11px;
   left: 12px;
 }
 
@@ -824,8 +824,7 @@ h2 {
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-form-link {
-}
+
 .modal-form-agreement-text {
   font-style: normal;
   font-weight: 400;
@@ -844,8 +843,9 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 200px;
+  height: 50px;
 }
-
 .modal-form-checkbox:checked {
   background-color: #2196f3;
   border-color: transparent;
